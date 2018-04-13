@@ -1,5 +1,11 @@
 #!/bin/sh
 
+LOCAL_GATEWAY="10.0.0.1"
+REMOTE_GATEWAY="192.168.42.1"
+
+REMOTE_IP="88.99.13.172"
+LOCAL_IP="37.46.132.56"
+
 mkdir -p /var/run/xl2tpd ;
 touch /var/run/xl2tpd/l2tp-control ;
 
@@ -13,12 +19,8 @@ echo "c myvpn" > /var/run/xl2tpd/l2tp-control ;
 # ip route
 sleep 2
 
-DEFAULT_ROUTE=$(ip route show default | awk '/default/ {print $3}')
-PUBLIC_IP=$PUBLIC_IP
-echo $DEFAULT_ROUTE;
-echo $PUBLIC_IP
-route add $VPN_SERVER_IP gw $DEFAULT_ROUTE
-route add $PUBLIC_IP gw $DEFAULT_ROUTE
+route add $REMOTE_IP gw $LOCAL_GATEWAY
+route add $LOCAL_IP gw $REMOTE_GATEWAY
 
 sleep 5
 route add default dev ppp0
