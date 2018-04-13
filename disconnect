@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "d myvpn" > /var/run/xl2tpd/l2tp-control
-ipsec down myvpn
+echo "d vpn-connection" > /var/run/xl2tpd/l2tp-control
+ipsec down vpn-connection
