@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # apt-get update;
-apt-get -y install strongswan xl2tpd;
+apt-get -y install openswan xl2tpd;
 
 cat > /etc/ipsec.conf <<EOF
 config setup

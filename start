@@ -1,12 +1,9 @@
 #!/bin/sh
 
-mkdir -p /var/run/xl2tpd ;
-touch /var/run/xl2tpd/l2tp-control ;
+/etc/init.d/ipsec start ;
+/etc/init.d/xl2tpd start ;
 
-service strongswan restart ;
-service xl2tpd restart ;
-
-ipsec up L2TP-PSK ;
+ipsec auto --up L2TP-PSK ;
 
 echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control ;
 
