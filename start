@@ -6,7 +6,7 @@ touch /var/run/xl2tpd/l2tp-control ;
 service strongswan restart ;
 service xl2tpd restart ;
 
-ipsec auto --up L2TP-PSK ;
+ipsec up L2TP-PSK ;
 
 echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control ;
 
