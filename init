@@ -9,7 +9,7 @@ config setup
         nat_traversal=yes
         protostack=netkey
         oe=off
-        plutoopts="--interface=eth0"
+        plutoopts="--interface=$INTERFACE"
 conn L2TP-PSK
         authby=secret
         pfs=no
