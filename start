@@ -1,10 +1,10 @@
 #!/bin/sh
 
-LOCAL_GATEWAY="10.0.0.1"
-REMOTE_GATEWAY="192.168.42.1"
+LOCAL_GATEWAY=""
+REMOTE_GATEWAY=""
 
-REMOTE_IP="88.99.13.172"
-LOCAL_IP="37.46.132.56"
+REMOTE_IP=""
+LOCAL_IP=""
 
 mkdir -p /var/run/xl2tpd ;
 touch /var/run/xl2tpd/l2tp-control ;
